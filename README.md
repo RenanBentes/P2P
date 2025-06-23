@@ -74,7 +74,7 @@ graph TB
 
 ## 🔧 Pré-requisitos
 
-- **Java JDK 24.0.1** ou superior
+- **Java JDK 23.0.1** ou superior
 - **Sistema operacional**: Windows, Linux ou macOS
 - **Rede**: Conectividade UDP e TCP
 - **Portas**: Certifique-se de que as portas não estejam bloqueadas por firewall
