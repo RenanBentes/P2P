@@ -2,10 +2,6 @@
 
 Um sistema completo de compartilhamento de arquivos peer-to-peer (P2P) com tracker centralizado, implementado em Java. O sistema permite que múltiplos peers compartilhem arquivos de forma distribuída e eficiente.
 
-[![Java](https://img.shields.io/badge/Java-24.0.1-orange.svg)](https://openjdk.org/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow.svg)]()
-
 ## 📋 Índice
 
 - [Visão Geral](#-visão-geral)
@@ -16,8 +12,6 @@ Um sistema completo de compartilhamento de arquivos peer-to-peer (P2P) com track
 - [Como Usar](#-como-usar)
 - [Protocolos de Comunicação](#-protocolos-de-comunicação)
 - [Estrutura do Projeto](#-estrutura-do-projeto)
-- [Contribuição](#-contribuição)
-- [Licença](#-licença)
 
 ## 🎯 Visão Geral
 
