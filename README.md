@@ -231,6 +231,6 @@ P2P em Java/
 │   └── Tracker.iml                   # Arquivo de configuração IntelliJ
 ├── .idea/                            # Configurações do IntelliJ IDEA
 ├── out/                              # Arquivos compilados
-└── README.md                         # Este arquivo
+
 ```
 
