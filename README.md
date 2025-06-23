@@ -8,7 +8,6 @@ Um sistema completo de compartilhamento de arquivos peer-to-peer (P2P) com track
 - [Arquitetura](#-arquitetura)
 - [Funcionalidades](#-funcionalidades)
 - [Pré-requisitos](#-pré-requisitos)
-- [Instalação](#-instalação)
 - [Como Usar](#-como-usar)
 - [Protocolos de Comunicação](#-protocolos-de-comunicação)
 - [Estrutura do Projeto](#-estrutura-do-projeto)
@@ -78,40 +77,6 @@ graph TB
 - **Sistema operacional**: Windows, Linux ou macOS
 - **Rede**: Conectividade UDP e TCP
 - **Portas**: Certifique-se de que as portas não estejam bloqueadas por firewall
-
-## 📦 Instalação
-
-### 1. Clone o repositório
-```bash
-git clone https://github.com/seu-usuario/P2P-em-Java.git
-cd "P2P em Java"
-```
-
-### 2. Compile o projeto
-
-**Para o Tracker:**
-```bash
-cd Tracker/src
-javac -d ../../out *.java
-```
-
-**Para o Peer:**
-```bash
-cd Peer/src  
-javac -d ../../out *.java
-```
-
-### 3. Execute o tracker
-```bash
-cd out
-java Tracker
-```
-
-### 4. Execute os peers (em terminais separados)
-```bash
-cd out
-java Peer
-```
 
 ## 🚀 Como Usar
 
