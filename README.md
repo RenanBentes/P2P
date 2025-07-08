@@ -1,6 +1,6 @@
 # 🌐 Sistema P2P de Compartilhamento de Arquivos
 
-Um sistema completo de compartilhamento de arquivos peer-to-peer (P2P) com tracker centralizado, implementado em Java. O sistema permite que múltiplos peers compartilhem arquivos de forma distribuída e eficiente.
+Um sistema completo de compartilhamento de arquivos peer-to-peer (P2P) com tracker centralizado, implementado em diferentes linguagens. O sistema permite que múltiplos peers compartilhem arquivos de forma distribuída e eficiente.
 
 ## 📋 Índice
 
