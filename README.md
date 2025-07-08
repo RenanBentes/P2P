@@ -42,11 +42,11 @@ graph TB
     P2 -->|TCP<br/>Transferência| P4
     P3 -->|TCP<br/>Transferência| P4
     
-    style T fill:#e1f5fe
-    style P1 fill:#f3e5f5
-    style P2 fill:#f3e5f5
-    style P3 fill:#f3e5f5
-    style P4 fill:#f3e5f5
+    style T fill:#fffff
+    style P1 fill:#fffff
+    style P2 fill:#fffff
+    style P3 fill:#fffff
+    style P4 fill:#fffff
 ```
 
 ## ✨ Funcionalidades
@@ -66,42 +66,6 @@ graph TB
 - ✅ **Sistema de chunks** para arquivos grandes
 - ✅ **Heartbeat periódico** para manter conexão ativa
 - ✅ **Comunicação TCP** otimizada para transferências
-
-### Comandos Disponíveis no Peer
-
-| Comando | Descrição | Exemplo |
-|---------|-----------|---------|
-| `list` | Lista arquivos disponíveis na rede | `list` |
-| `download <arquivo>` | Baixa um arquivo da rede | `download exemplo.txt` |
-| `status` | Mostra status do peer | `status` |
-| `peers` | Lista peers conectados | `peers` |
-| `exit` | Sai do programa | `exit` |
-
-### Exemplo de Uso Prático
-
-```bash
-# Terminal 1 - Tracker
-$ cd out
-$ java Tracker
-[INFO] Tracker iniciado
-
-# Terminal 2 - Peer 1
-$ cd out  
-$ java Peer
-[INFO] Peer registrado com sucesso
-[INFO] Pasta compartilhada: ./shared
-> list
-Arquivo1.txt (Peer: 192.168.1.100:9001)
-Arquivo2.pdf (Peer: 192.168.1.101:9002)
-
-# Terminal 3 - Peer 2  
-$ cd out
-$ java Peer
-[INFO] Peer registrado com sucesso
-> download Arquivo1.txt
-[INFO] Baixando de 192.168.1.100:9001...
-[INFO] Download concluído: Arquivo1.txt
-```
 
 ## 📡 Protocolos de Comunicação
 
