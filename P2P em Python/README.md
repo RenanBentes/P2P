@@ -1,107 +1,154 @@
-# P2P em Python
+# Sistema P2P em Python
 
-Este é um sistema de peer-to-peer (P2P) desenvolvido em Python. O sistema utiliza um tracker central para a descoberta de peers e comunicação direta via TCP para a transferência de ficheiros.
+Um sistema peer-to-peer (P2P) desenvolvido em Python que utiliza um tracker central para descoberta de peers e comunicação direta via TCP para transferência de ficheiros.
+
+## 📋 Índice
+
+- [Pré-requisitos](#-pré-requisitos)
+- [Instalação](#-instalação)
+- [Configuração](#-configuração)
+- [Como Usar](#-como-usar)
+- [Comandos Disponíveis](#-comandos-disponíveis)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Arquitetura](#-arquitetura)
 
 ## 🔧 Pré-requisitos
 
-- **Python 3.8** ou superior.
-- **Dependências**: Instale a biblioteca `watchdog` para o monitoramento de pastas em tempo real.
-  ```bash
-  pip install watchdog
+### Software
+- **Python 3.8** ou superior
+- **Sistema Operacional**: Windows, Linux ou macOS
 
-Sistema Operacional: Windows, Linux ou macOS.
+### Conectividade de Rede
+- **UDP**: Comunicação entre tracker e peers
+- **TCP**: Comunicação direta entre peers
+- **Portas**: 
+  - Tracker: 6881 (padrão)
+  - Peers: 9000-9999 (faixa dinâmica)
 
-Rede: Conectividade UDP entre o tracker e os peers e TCP entre os Peers.
+⚠️ **Importante**: Certifique-se de que as portas não estão bloqueadas por firewall.
 
-Portas: Certifique-se de que as portas utilizadas (padrão: 6881 para o tracker, 9000-9999 para os peers) não estejam bloqueadas por uma firewall.
+## 📦 Instalação
 
-🚀 Como Usar
-Configurando o Sistema
-Antes de iniciar, é crucial configurar o endereço do Tracker no cliente Peer.
+1. **Clone ou descarregue o projeto**
+2. **Instale as dependências necessárias**:
+   ```bash
+   pip install watchdog
+   ```
 
-Abra o ficheiro Peer/Peer.py num editor de texto.
+## ⚙️ Configuração
 
-Localize a linha de configuração do IP:
+### Configurar o Endereço do Tracker
 
-# Mude este IP para o endereço da máquina onde o Tracker está a ser executado.
-TRACKER_IP = "192.168.12.38"
+**Antes de iniciar o sistema**, é necessário configurar o endereço IP do tracker:
 
-Altere o endereço IP para o IP da máquina onde irá executar o Tracker.py. Se for na mesma máquina, pode usar "127.0.0.1".
+1. Abra o ficheiro `Peer/Peer.py` num editor de texto
+2. Localize a linha de configuração:
+   ```python
+   # Mude este IP para o endereço da máquina onde o Tracker está a ser executado
+   TRACKER_IP = "192.168.12.38"
+   ```
+3. Altere o endereço IP:
+   - **Mesma máquina**: `"127.0.0.1"`
+   - **Máquina diferente**: IP da máquina onde executa o Tracker
 
-Iniciando o Sistema
-Inicie o Tracker primeiro. Navegue até à pasta Tracker e execute:
+## 🚀 Como Usar
 
+### 1. Iniciar o Tracker
+
+```bash
 cd Tracker/
 python Tracker.py
+```
 
-O tracker ficará a escutar na porta padrão 6881.
+✅ O tracker ficará a escutar na porta 6881
 
-Inicie os Peers (em terminais separados). Navegue até à pasta Peer e execute:
+### 2. Iniciar os Peers
 
+**Terminal separado para cada peer:**
+
+```bash
 cd Peer/
 python Peer.py
+```
 
-O peer iniciará numa porta aleatória entre 9000 e 9999.
+**Opções de inicialização:**
+- **Porta automática**: `python Peer.py` (escolhe porta entre 9000-9999)
+- **Porta específica**: `python Peer.py 9001`
 
-Para especificar uma porta, passe-a como argumento: python Peer.py 9001
+### 3. Partilhar Ficheiros
 
-Cada peer criará automaticamente uma pasta de partilha em ~/Downloads/P2P/User-<porta>/. Coloque os ficheiros que deseja partilhar nesta pasta.
+Cada peer cria automaticamente uma pasta de partilha:
+```
+~/Downloads/P2P/User-<porta>/
+```
 
-💻 Comandos do Peer
-Uma vez que o peer esteja em execução, pode usar os seguintes comandos na consola:
+**Para partilhar ficheiros**: Coloque os ficheiros nesta pasta.
 
-Comando
+## 💻 Comandos Disponíveis
 
-Descrição
+| Comando | Aliases | Descrição |
+|---------|---------|-----------|
+| `list` | `ls`, `files` | Lista ficheiros locais e progresso de downloads |
+| `peers` | `p` | Mostra outros peers conhecidos na rede |
+| `download <ficheiro>` | - | Descarrega um ficheiro da rede |
+| `downloads` | `dls` | Mostra estado dos downloads ativos e completados |
+| `status` | `info` | Exibe resumo completo do estado do peer |
+| `refresh` | `update` | Força atualização da lista de peers do tracker |
+| `tracker` | - | Mostra informações sobre ligação ao tracker |
+| `whoami` | `me` | Mostra identidade e endereço deste peer |
+| `help` | `h`, `?` | Exibe lista de todos os comandos disponíveis |
+| `quit` | `exit`, `q`, `bye` | Encerra o peer de forma segura |
 
-list (ls, files)
+### Exemplos de Uso
 
-Lista os ficheiros locais e o progresso do download.
+```bash
+# Listar ficheiros disponíveis
+> list
 
-peers (p)
+# Descarregar um ficheiro
+> download exemplo.txt
 
-Mostra os outros peers conhecidos na rede.
+# Ver estado dos downloads
+> downloads
 
-download <ficheiro>
+# Ver peers conectados
+> peers
 
-Descarrega um ficheiro da rede.
+# Obter informações completas
+> status
+```
 
-downloads (dls)
+## 📁 Estrutura do Projeto
 
-Mostra o estado dos downloads ativos e completados.
-
-status (info)
-
-Exibe um resumo completo do estado do peer.
-
-refresh (update)
-
-Força uma atualização da lista de peers do tracker.
-
-tracker
-
-Mostra informações sobre a ligação ao tracker.
-
-whoami (me)
-
-Mostra a identidade e endereço deste peer.
-
-help (h, ?)
-
-Exibe a lista de todos os comandos disponíveis.
-
-quit (exit, q, bye)
-
-Encerra o peer de forma segura.
-
-📁 Estrutura do Projeto
+```
 P2P em Python/
 ├── Peer/
 │   ├── CommandInterface.py    # Interface de comandos do peer
 │   ├── DownloadManager.py     # Gestão de downloads
 │   ├── FileManager.py         # Gestão de ficheiros e chunks
-│   ├── NetworkManager.py      # Gestão de toda a comunicação de rede (UDP/TCP)
-│   └── Peer.py                # Cliente peer principal que orquestra os componentes
+│   ├── NetworkManager.py      # Gestão da comunicação de rede (UDP/TCP)
+│   └── Peer.py                # Cliente peer principal
 └── Tracker/
     └── Tracker.py             # Servidor tracker principal
+```
 
+## 🏗️ Arquitetura
+
+### Componentes Principais
+
+**Tracker (Servidor Central)**
+- Regista e mantém lista de peers ativos
+- Facilita descoberta de peers
+- Comunica via UDP na porta 6881
+
+**Peer (Cliente)**
+- Partilha e descarrega ficheiros
+- Comunica com tracker via UDP
+- Transfere ficheiros diretamente com outros peers via TCP
+- Monitoriza pasta de partilha em tempo real
+
+### Fluxo de Comunicação
+
+1. **Peer** regista-se no **Tracker** (UDP)
+2. **Peer** solicita lista de outros peers (UDP)
+3. **Peer** comunica diretamente com outros peers para transferir ficheiros (TCP)
