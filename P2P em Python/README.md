@@ -1,17 +1,3 @@
-# Sistema P2P em Python
-
-Um sistema peer-to-peer (P2P) desenvolvido em Python que utiliza um tracker central para descoberta de peers e comunicação direta via TCP para transferência de ficheiros.
-
-## 📋 Índice
-
-- [Pré-requisitos](#-pré-requisitos)
-- [Instalação](#-instalação)
-- [Configuração](#-configuração)
-- [Como Usar](#-como-usar)
-- [Comandos Disponíveis](#-comandos-disponíveis)
-- [Estrutura do Projeto](#-estrutura-do-projeto)
-- [Arquitetura](#-arquitetura)
-
 ## 🔧 Pré-requisitos
 
 ### Software
