@@ -1,6 +1,6 @@
 # P2P em Python
 
-Este é um sistema de partilha de ficheiros peer-to-peer (P2P) desenvolvido em Python. O sistema utiliza um tracker central para a descoberta de peers e comunicação direta via TCP para a transferência de ficheiros.
+Este é um sistema de peer-to-peer (P2P) desenvolvido em Python. O sistema utiliza um tracker central para a descoberta de peers e comunicação direta via TCP para a transferência de ficheiros.
 
 ## 🔧 Pré-requisitos
 
@@ -11,7 +11,7 @@ Este é um sistema de partilha de ficheiros peer-to-peer (P2P) desenvolvido em P
 
 Sistema Operacional: Windows, Linux ou macOS.
 
-Rede: Conectividade UDP e TCP entre o tracker e os peers.
+Rede: Conectividade UDP entre o tracker e os peers e TCP entre os Peers.
 
 Portas: Certifique-se de que as portas utilizadas (padrão: 6881 para o tracker, 9000-9999 para os peers) não estejam bloqueadas por uma firewall.
 
